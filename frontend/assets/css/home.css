@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.welcome-display,.erro_display,.button_new_contacts{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.form_created_user{
+    padding: 2rem 20rem;
+}
+
+
+.home_container{
+    height: 34.6rem;
+}
+
+.dropdown-menu {
+    min-width: 20rem;
+}
+
+.table-contats{
+    margin: 1rem 0rem;
+}

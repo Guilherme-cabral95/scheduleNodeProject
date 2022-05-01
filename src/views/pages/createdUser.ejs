@@ -1,0 +1,30 @@
+<%- include('../templates/head') %> 
+<%- include('../components/navbar',{title:'Agenda de Contatos',session:session,created:true}) %> 
+
+<div class="container">
+    <div class="messages">
+      <%- include('../components/messages') %> 
+    </div>
+    <form method="post" class="form_created_user">
+         <%-include('../components/inputs',{
+           size:'mb-3',
+           value:'',
+           id:'inputEmail',
+           label:'E - mail',
+           name:'email',
+           type_input: 'email'
+         })%> 
+         <%-include('../components/inputs',{
+          size:'mb-3',
+          value:'',
+          id:'inputPassword',
+          label:'Senha',
+          name:'password',
+          type_input: 'password'
+        })%> 
+        <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<%- include('../templates/footer') %>

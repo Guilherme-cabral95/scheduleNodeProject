@@ -32,9 +32,6 @@ const helmet = require("helmet");
 
 const csurf = require('csurf')
 
-app.use(helmet())
-
-app.use(csurf())
 
 const router = require('./router')
 
@@ -51,14 +48,22 @@ app.set('view engine','ejs')
 
 app.use(express.urlencoded({extended:true}))
 
+app.use(express.json())
+
+app.use(helmet())
+
+app.use(csurf())
+
+app.use(middlewares.middlewareGlobal)
+
 app.use(middlewares.checkCsrf)
- 
+
 app.use(middlewares.generateCsrf)
 
 app.use(router)
 
 app.on('conect',()=>{
-    app.listen(8081)
+    app.listen(process.env.port)
     console.log('conectado')
 })
 

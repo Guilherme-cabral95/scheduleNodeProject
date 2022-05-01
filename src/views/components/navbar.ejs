@@ -1,0 +1,18 @@
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand mb-0 h1" href="/">
+        <% if(typeof title != 'undefined'){ %>
+            <h2> <%= title %> </h2>
+        <% }%>
+      </a>
+      <span class="navbar-brand  mb-0 h2">
+          <% if(typeof session == 'undefined' && !created){  %> 
+                <%- include('../templates/formLogin') %>
+           <% }else
+            if(typeof session != 'undefined' && !created){
+           %>
+              <%- include('../templates/buttonExit') %>
+            <%}%>  
+      </span>
+    </div>
+  </nav>
