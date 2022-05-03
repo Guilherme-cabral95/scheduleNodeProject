@@ -33,6 +33,8 @@ const helmet = require("helmet");
 const csurf = require('csurf')
 
 
+const cors = require('cors')
+
 const router = require('./router')
 
 const middlewares = require('./src/middlewares/middlewaresGlobal')
@@ -59,6 +61,8 @@ app.use(middlewares.middlewareGlobal)
 app.use(middlewares.checkCsrf)
 
 app.use(middlewares.generateCsrf)
+
+app.use(cors())
 
 app.use(router)
 
