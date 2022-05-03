@@ -2,7 +2,10 @@ const path = require('path');
 
 module.exports = {
   mode:'production',  
-  entry: './frontend/main.js',
+  entry: {
+    path: path.resolve(__dirname, 'frontend'),
+    filename: 'main.js',
+  },
   output: {
       path: path.resolve(__dirname, 'public','assets','js'),
       filename: 'Bunble.js',
