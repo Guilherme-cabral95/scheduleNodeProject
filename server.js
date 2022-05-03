@@ -62,7 +62,11 @@ app.use(middlewares.checkCsrf)
 
 app.use(middlewares.generateCsrf)
 
-app.use(cors())
+
+const options = {
+    origin: 'http://34.151.211.23/',
+}
+app.use(cors(options))
 
 app.use(router)
 
