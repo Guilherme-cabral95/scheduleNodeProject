@@ -4,6 +4,8 @@ const express = require('express')
 
 const app = express()
 
+const path = require('path')
+
 const mongoose = require('mongoose')
 
 const flash = require('connect-flash')
@@ -40,11 +42,11 @@ const router = require('./router')
 const middlewares = require('./src/middlewares/middlewaresGlobal')
 
 
-app.use(express.static('public'))
+app.use(express.static(path.resolve(__dirname,'public')))
 
 app.use(flash())
 
-app.set('views','./src/views')
+app.set('views',path.resolve(__dirname,'src','views'))
 
 app.set('view engine','ejs')
 
