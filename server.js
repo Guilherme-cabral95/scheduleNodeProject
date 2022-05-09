@@ -42,7 +42,7 @@ const router = require('./router')
 const middlewares = require('./src/middlewares/middlewaresGlobal')
 
 
-app.use(express.static(path.resolve(__dirname,'public')))
+app.use(express.static('public'))
 
 app.use(flash())
 
@@ -65,10 +65,7 @@ app.use(middlewares.checkCsrf)
 app.use(middlewares.generateCsrf)
 
 
-const options = {
-    origin: 'http://34.151.211.23/',
-}
-app.use(cors(options))
+app.use(cors())
 
 app.use(router)
 
